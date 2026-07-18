@@ -441,31 +441,6 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* --------------------------------------------------------------------------
-   Ticker
-   -------------------------------------------------------------------------- */
-.ticker {
-  border-block: 1px solid var(--line);
-  background: var(--ink-2);
-  overflow: hidden;
-  padding: 18px 0;
-}
-.ticker__track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
-.ticker:hover .ticker__track { animation-play-state: paused; }
-.ticker__group { display: flex; align-items: center; }
-.ticker__group span {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(244, 241, 233, 0.55);
-  padding: 0 28px;
-  white-space: nowrap;
-}
-.ticker__group i { color: var(--gold); font-style: normal; font-size: 0.6rem; }
-@keyframes ticker-scroll { to { transform: translateX(-50%); } }
-
-/* --------------------------------------------------------------------------
    Sections (shared)
    -------------------------------------------------------------------------- */
 .section { padding: clamp(84px, 11vw, 140px) 0; position: relative; }
