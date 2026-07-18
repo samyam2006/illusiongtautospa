@@ -530,17 +530,48 @@ button { font: inherit; cursor: pointer; }
 .about__visual {
   position: relative;
   display: grid;
-  gap: 0;
-  justify-items: center;
-  padding: 34px 0;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+.about__photo {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+.about__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1s var(--ease-out);
+}
+.about__photo:hover img { transform: scale(1.04); }
+.about__photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 34px 20px 14px;
+  background: linear-gradient(transparent, rgba(8, 8, 10, 0.88));
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-hi);
+}
+
+.about__duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 .about__card {
-  width: min(320px, 100%);
   display: grid;
   justify-items: center;
   gap: 6px;
   text-align: center;
-  padding: 30px 26px;
+  padding: 22px 14px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: linear-gradient(160deg, var(--ink-3), var(--ink-2));
@@ -565,47 +596,6 @@ button { font: inherit; cursor: pointer; }
   color: var(--muted);
 }
 .about__card--salon svg { color: var(--teal-hi); }
-
-.about__thread {
-  width: 1px; height: 56px;
-  background: linear-gradient(var(--teal-hi), var(--gold));
-  position: relative;
-}
-.about__thread::after {
-  content: "";
-  position: absolute;
-  left: 50%; top: 0;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--gold-hi);
-  transform: translateX(-50%);
-  animation: thread-drop 2.4s ease-in-out infinite;
-}
-@keyframes thread-drop {
-  0%   { top: 0; opacity: 0; }
-  15%  { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { top: calc(100% - 5px); opacity: 0; }
-}
-
-.about__stat {
-  margin-top: 34px;
-  text-align: center;
-  display: grid;
-  gap: 4px;
-}
-.about__stat-num {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 600;
-  color: var(--gold-hi);
-}
-.about__stat-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 
 /* --------------------------------------------------------------------------
    Services
@@ -769,21 +759,21 @@ button { font: inherit; cursor: pointer; }
 .gallery__item:hover { transform: translateY(-6px); border-color: rgba(232, 199, 106, 0.3); }
 
 .gallery__art {
-  height: 150px;
+  height: 180px;
   position: relative;
   overflow: hidden;
   transition: transform 0.7s var(--ease-out);
 }
 .gallery__item:hover .gallery__art { transform: scale(1.05); }
 
-.gallery__art--gloss {
-  background:
-    linear-gradient(115deg, transparent 42%, rgba(245, 227, 168, 0.35) 50%, transparent 58%),
-    linear-gradient(160deg, #23242b, #0c0d11 70%);
-  background-size: 250% 100%, 100% 100%;
-  background-position: 100% 0, 0 0;
+/* real photography cards */
+.gallery__art--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.gallery__item:hover .gallery__art--gloss { background-position: 0 0, 0 0; transition: background-position 1.1s var(--ease-out), transform 0.7s var(--ease-out); }
+.gallery__art--wheels img { object-position: center 62%; }
+.gallery__art--cabin img { object-position: center 42%; }
 
 .gallery__art--bead { background: linear-gradient(160deg, #123);
   background: linear-gradient(165deg, #10201f, #0a1414 70%); }
@@ -806,11 +796,6 @@ button { font: inherit; cursor: pointer; }
   50%      { transform: translateY(4px) scale(1.06, 0.95); }
 }
 
-.gallery__art--stitch {
-  background:
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(201, 162, 39, 0.16) 14px 15px),
-    linear-gradient(160deg, #1d1712, #100c08 70%);
-}
 .gallery__art--film {
   background:
     linear-gradient(100deg, rgba(46, 169, 165, 0.10) 0 46%, rgba(255,255,255,0.06) 46% 54%, transparent 54%),
@@ -1058,7 +1043,7 @@ button { font: inherit; cursor: pointer; }
 
   .services__grid { grid-template-columns: 1fr; gap: 16px; }
   .gallery__grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .gallery__art { height: 110px; }
+  .gallery__art { height: 140px; }
 
   .quotes__viewport { min-height: 340px; }
 

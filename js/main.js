@@ -77,31 +77,6 @@
     revealEls.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* ---------- Animated counter (About stat) ---------- */
-  var statEl = document.querySelector("[data-count]");
-  if (statEl && "IntersectionObserver" in window && !prefersReducedMotion) {
-    var statIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        statIO.unobserve(entry.target);
-        var target = parseInt(entry.target.getAttribute("data-count"), 10);
-        var suffix = entry.target.getAttribute("data-suffix") || "";
-        var start = null;
-        var dur = 1400;
-        function step(ts) {
-          if (!start) start = ts;
-          var p = Math.min((ts - start) / dur, 1);
-          // ease-out cubic
-          var eased = 1 - Math.pow(1 - p, 3);
-          entry.target.textContent = Math.round(eased * target) + suffix;
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-    }, { threshold: 0.6 });
-    statIO.observe(statEl);
-  }
-
   /* ---------- Before / after comparison slider ---------- */
   var ba = document.getElementById("baSlider");
   var handle = document.getElementById("baHandle");

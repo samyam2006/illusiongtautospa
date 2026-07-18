@@ -71,11 +71,13 @@ The site is 100% static — deploy the repository root to any static host:
 
 ### Post-launch checklist
 
-1. **Real photography** — the gallery's before/after panes are hand-drawn SVG
-   scenes as placeholders. Swap them for real before/after photos (two
-   same-angle shots) inside `#baSlider` in `index.html`; the slider logic
-   works unchanged with `<img>` elements. The four gallery cards
-   (`.gallery__art`) are also designed to be replaced with photos.
+1. **Real photography** — the About section and two gallery cards now use
+   real shop photos (`assets/*-web.jpg`, optimized versions of the uploaded
+   originals). Still on placeholders: the before/after slider panes inside
+   `#baSlider` (needs two same-angle before/after shots; the slider logic
+   works unchanged with `<img>` elements) and the two remaining gallery
+   cards. To add more photos, drop originals in `assets/` and create
+   compressed `-web.jpg` versions (~800–1100px wide, JPEG q82).
 2. **Contact form backend** — add `action="https://formspree.io/f/YOUR_ID"`
    (or any endpoint) to `<form id="contactForm">`. Until then, submissions
    open a pre-filled email to illusionsgtautospa@gmail.com.
