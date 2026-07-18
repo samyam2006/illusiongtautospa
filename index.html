@@ -16,7 +16,8 @@
   <meta property="og:site_name" content="Illusions GT Auto Spa">
 
   <meta name="theme-color" content="#0b0b0d">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,16 +59,18 @@
   <!-- ===== Preloader ===== -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__mark">
-      <svg viewBox="0 0 120 120" width="88" height="88" fill="none">
-        <circle class="preloader__ring" cx="60" cy="60" r="54" stroke="url(#plGold)" stroke-width="1.5"/>
-        <text class="preloader__mono" x="60" y="72" text-anchor="middle">IG</text>
-        <defs>
-          <linearGradient id="plGold" x1="0" y1="0" x2="120" y2="120">
-            <stop offset="0" stop-color="#e8c76a"/>
-            <stop offset="1" stop-color="#8a6c1f"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <span class="preloader__badge">
+        <svg viewBox="0 0 120 120" width="104" height="104" fill="none">
+          <circle class="preloader__ring" cx="60" cy="60" r="57" stroke="url(#plGold)" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="plGold" x1="0" y1="0" x2="120" y2="120">
+              <stop offset="0" stop-color="#e8c76a"/>
+              <stop offset="1" stop-color="#8a6c1f"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <img class="preloader__logo" src="assets/logo-web.png" alt="" width="88" height="88">
+      </span>
       <span class="preloader__word">Illusions&nbsp;GT</span>
     </div>
   </div>
@@ -76,12 +79,7 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a class="nav__brand" href="#top" aria-label="Illusions GT Auto Spa — home">
-        <span class="nav__monogram">
-          <svg viewBox="0 0 44 44" width="40" height="40" fill="none" aria-hidden="true">
-            <circle cx="22" cy="22" r="20.5" stroke="currentColor" stroke-width="1.2"/>
-            <text x="22" y="27.5" text-anchor="middle" class="nav__monogram-text">IG</text>
-          </svg>
-        </span>
+        <img class="nav__logo" src="assets/logo-web.png" alt="" width="44" height="44">
         <span class="nav__wordmark">
           <strong>Illusions GT</strong>
           <em>Auto Spa · Georgetown</em>
@@ -629,6 +627,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
+        <img class="footer__logo" src="assets/logo-web.png" alt="Illusions GT Auto Spa logo" width="56" height="56" loading="lazy">
         <strong>Illusions GT Auto Spa</strong>
         <span>Elite auto care &amp; shine · Georgetown, D.C.</span>
       </div>

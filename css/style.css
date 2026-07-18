@@ -125,6 +125,22 @@ button { font: inherit; cursor: pointer; }
 
 .preloader__mark { display: grid; place-items: center; gap: 18px; }
 
+.preloader__badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+}
+.preloader__badge svg { position: absolute; inset: 0; }
+.preloader__logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fade-up 0.6s 0.5s ease forwards;
+}
+
 .preloader__ring {
   stroke-dasharray: 340;
   stroke-dashoffset: 340;
@@ -134,14 +150,6 @@ button { font: inherit; cursor: pointer; }
 }
 @keyframes draw-ring { to { stroke-dashoffset: 0; } }
 
-.preloader__mono {
-  font-family: var(--font-display);
-  font-size: 34px;
-  letter-spacing: 2px;
-  fill: var(--gold-hi);
-  opacity: 0;
-  animation: fade-up 0.5s 0.55s ease forwards;
-}
 .preloader__word {
   font-family: var(--font-display);
   font-size: 0.75rem;
@@ -182,12 +190,17 @@ button { font: inherit; cursor: pointer; }
   gap: 24px;
 }
 
-.nav__brand { display: flex; align-items: center; gap: 13px; color: var(--gold-hi); }
-.nav__monogram-text {
-  font-family: var(--font-display);
-  font-size: 15px;
-  letter-spacing: 1px;
-  fill: currentColor;
+.nav__brand { display: flex; align-items: center; gap: 13px; }
+.nav__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(232, 199, 106, 0.28);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.4s;
+}
+.nav__brand:hover .nav__logo {
+  transform: rotate(-6deg) scale(1.05);
+  box-shadow: 0 0 0 1px rgba(232, 199, 106, 0.6), 0 0 18px rgba(201, 162, 39, 0.25);
 }
 .nav__wordmark { display: flex; flex-direction: column; line-height: 1.25; }
 .nav__wordmark strong {
@@ -978,7 +991,14 @@ button { font: inherit; cursor: pointer; }
   padding: 46px 0 40px;
 }
 .footer__inner { display: grid; gap: 22px; justify-items: center; text-align: center; }
-.footer__brand { display: grid; gap: 4px; }
+.footer__brand { display: grid; gap: 4px; justify-items: center; }
+.footer__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  box-shadow: 0 0 0 1px rgba(232, 199, 106, 0.22);
+}
 .footer__brand strong {
   font-family: var(--font-display);
   font-weight: 600;
